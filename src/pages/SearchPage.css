@@ -1,0 +1,19 @@
+.input {
+    margin: 20px;
+}
+
+.albums {
+    background-color: #f5f5f5;
+    margin-left: 20px;
+    font-size: 18px;
+    display: block;
+  }
+
+  .albums ul {
+    display: block;
+
+  }
+  
+  .albums ul li {
+    margin-bottom: 10px;
+  }

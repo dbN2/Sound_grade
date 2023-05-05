@@ -1,0 +1,52 @@
+.album-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .description {
+    max-width: 600px;
+  }
+  
+  img{
+    width: 200px;
+    height: 200px;
+  }
+
+
+  .ratings {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .ratings ul {
+    display: block;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+
+  .user-rating {
+    font-size: 16px;
+    text-align: center;
+    color: #4f7083;
+    padding-bottom: 10px;
+  }
+  
+  .ratings li {
+    list-style: none;
+    flex-basis: 20%; /* or adjust the value based on your preference */
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  select {
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f2f2f2;
+    font-size: 16px;
+  }
