@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 
   function Album(props) {
     const { id, title, artist, image, ratings, year, genre} = props.album;
-  
+    const capitalizedGenre = genre.charAt(0).toUpperCase() + genre.slice(1);
+
     let averageRating;
     let totalRating;
   
@@ -27,7 +28,8 @@ import { Link } from "react-router-dom";
     <div className="info">
       <h2>{title}</h2>
       <p>by {artist}</p>
-      <p> {year}  <div className="genre"> {genre} </div> </p>
+  <p> {year} <div className="genre" style={{fontStyle: 'italic'}}> {capitalizedGenre} </div> </p>
+
   
     <div className="ratings">
         <div className="average-rating">{averageRating.toFixed(1)}</div>

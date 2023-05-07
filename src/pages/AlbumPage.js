@@ -17,19 +17,6 @@ export const AlbumPage= (props) => {
     setAlbum(selectedAlbum);
   }, [albums, id]);
 
-  // function handleRatingChange(event) {
-  //   const query = ratingsRef
-  // .where("userId", "==", currentUser.uid)
-  // .where("albumId", "==", id);
-
-  //   const newRating = parseInt(event.target.value);
-  //   const updatedAlbum = {
-  //     ...album,
-  //     ratings: album.ratings ? [...album.ratings, newRating] : [newRating],
-  //   };
-  //   updateAlbum(updatedAlbum);
-  // }
-
   function handleRatingChange(event) {
     const newRating = parseInt(event.target.value) ;
   
@@ -38,14 +25,9 @@ export const AlbumPage= (props) => {
       console.log("User is not logged in");
       return;
     }
-  
     // Check if user has already rated the album
     const existingRating = album.ratings.find(rating => rating.userId === currentUser.uid);
-    if (existingRating && existingRating.rating == newRating) {
-      console.log("User has already rated this album");
-      return(<div> Already rated this album </div>)
-    }
-    else if (existingRating){
+    if (existingRating){  
       const updatedRatings = album.ratings.map(rating => {
         if (rating.userId === currentUser.uid) {
           return {
@@ -61,7 +43,6 @@ export const AlbumPage= (props) => {
       };
       updateAlbum(updatedAlbum);
     }
-
     else{
     // Add new rating to album ratings array
     const updatedAlbum = {
@@ -77,14 +58,15 @@ export const AlbumPage= (props) => {
     };
     updateAlbum(updatedAlbum);
   }
-  
   }
 
   if (!album) {
     return <div>Loading...</div>;
   }
 
-  const userRating = album.ratings.find((rating)=> (rating.userId===currentUser.uid));
+  let userRating;
+  if(currentUser){ userRating = album.ratings.find((rating)=> (rating.userId===currentUser.uid));
+                }
 
 
   return (
@@ -92,9 +74,7 @@ export const AlbumPage= (props) => {
       <h1>{album.title}</h1>
       <img src={album.image} alt={`${album.title} by ${album.artist}`} />
       <p> Artist: {album.artist}</p>
-      <div className="description">
-        <p> {album.description} </p>
-      </div>
+      
       <h2>Ratings</h2>
       {currentUser? 
       <select onChange={handleRatingChange}>

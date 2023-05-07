@@ -6,7 +6,7 @@ import "./TopRatedPage.css";
 export const TopRatedPage = (props) => {
   const { albums } = useContext(AlbumContext);
 
-  const sortedAlbums = albums.sort((a, b) => {
+  const sortedAlbums = albums.sort((a, b) => {    //sorts albums by rating
     const aRatings = a.ratings.map((rating) => rating.rating);    //Map to isolate rating values
     const bRatings = b.ratings.map((rating) => rating.rating);
 
@@ -15,7 +15,7 @@ export const TopRatedPage = (props) => {
     return bAverageRating - aAverageRating;
   });
 
-  const topRatedAlbums = sortedAlbums.slice(0, 10);
+  const topRatedAlbums = sortedAlbums.slice(0, 10); //show Top 10 albums
 
   return (
     <div className="top-rated-page">
