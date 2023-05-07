@@ -3,6 +3,21 @@
 
 This project is a music rating site where users can explore and rate different albums. It allows users to see albums they have rated on their profile, view album details, and rate albums based on their personal preferences. The site provides a user-friendly interface and uses Cloud Firestore to store albums.
 
+#Dependencies:
+
+ "firebase": "^9.21.0",
+ 
+ "firebase-auth": "^0.1.2",
+ 
+ "react": "^18.2.0",
+ 
+ "react-dom": "^18.2.0",
+ 
+ "react-router-dom": "^6.10.0",
+ 
+ "react-scripts": "5.0.1",
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
